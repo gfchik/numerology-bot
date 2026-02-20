@@ -389,8 +389,8 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 def main() -> None:
     """Запуск бота"""
-    # ВАШ ТОКЕН
-    TOKEN = "8515544933:AAEzfP9NUJs6IEgu01TtOwJxUfdXeUHJiuM"
+    import os
+TOKEN = os.getenv('TOKEN')
     
     # Создаем приложение
     application = Application.builder().token(TOKEN).build()
@@ -413,4 +413,5 @@ def main() -> None:
     application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
+
     main()
